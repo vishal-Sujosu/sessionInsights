@@ -1,1 +1,1 @@
-# sessionInsights
+# sessionInsight
