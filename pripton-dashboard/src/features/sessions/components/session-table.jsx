@@ -27,10 +27,10 @@ export function SessionTable({ initialData }) {
   const table = useSessionTable(sessions ?? [], filters.search, columnFilters)
 
   return (
-    <div className="space-y-4">
-      <div className="flex items-center justify-between gap-2">
-      <SessionFilters />
-      <DataTableToolbar table={table} />
+    <div className="space-y-4 min-w-0">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <SessionFilters />
+        <DataTableToolbar table={table} />
       </div>
 
       <DataTable

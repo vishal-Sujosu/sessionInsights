@@ -1,3 +1,4 @@
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -28,15 +29,15 @@ export default function RootLayout({ children }) {
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          enableSystem={false}
           disableTransitionOnChange
         >
-          <div className="grid h-dvh w-full overflow-hidden lg:grid-cols-[280px_1fr]">
+          <div className="grid min-h-screen min-w-0 overflow-hidden lg:grid-cols-[280px_1fr]">
             <Sidebar />
-            <div className="flex min-h-0 flex-col">
+            <div className="flex min-h-0 min-w-0 flex-col">
               <Header />
-              <main className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-4 lg:gap-6 lg:p-2">
+              <main className="flex min-h-0 min-w-0 flex-1 flex-col gap-4 overflow-auto p-4 lg:gap-6 lg:p-2">
                 <QueryProvider>
                   {children}
                 </QueryProvider>

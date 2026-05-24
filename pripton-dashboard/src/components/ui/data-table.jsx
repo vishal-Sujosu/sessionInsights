@@ -13,8 +13,8 @@ export function DataTable({ table, isLoading, emptyMessage = "No results found."
   const rows = table.getRowModel().rows
 
   return (
-    <div className="rounded-md border overflow-hidden">
-      <table className="w-full text-sm">
+    <div className="rounded-md border overflow-x-auto min-w-0">
+      <table className="min-w-full w-full text-sm">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id} className="border-b bg-muted/10 dark:bg-muted/20">

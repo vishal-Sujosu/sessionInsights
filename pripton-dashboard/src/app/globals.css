@@ -123,7 +123,7 @@
   }
   html,
   body {
-    overflow: hidden;
+    @apply min-h-screen w-full scroll-smooth;
   }
   body {
     @apply bg-background text-foreground;
