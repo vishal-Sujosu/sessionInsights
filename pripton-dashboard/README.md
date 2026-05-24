@@ -351,26 +351,5 @@ npm run lint
 npm run build
 ```
 
-### Performance Issues
-- Check browser DevTools Performance tab
-- Verify mock data size in `src/mocks/sessions.js`
-- Use React Profiler to identify slow components
 
-## Future Enhancements
 
-- [ ] Real-time WebSocket updates
-- [ ] Export data to CSV/PDF
-- [ ] Custom report generation
-- [ ] Advanced filtering with saved presets
-- [ ] User roles and permissions
-- [ ] Notification system for flagged sessions
-- [ ] Session replay functionality
-- [ ] AI-powered anomaly detection
-
-## License
-
-This project is part of the Session Insights platform.
-
-## Support
-
-For issues or questions, refer to the main project documentation or contact the development team.
