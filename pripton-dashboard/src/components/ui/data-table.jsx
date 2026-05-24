@@ -83,7 +83,7 @@ export function DataTable({ table, isLoading, emptyMessage = "No results found."
             rows.map((row) => (
               <tr
                 key={row.id}
-                onClick={() => openDetail(row.original.id)}
+                onClick={() => openDetail(row.original)}
                 className={cn(
                   "border-b transition-colors hover:bg-muted/50 cursor-pointer",
                   row.original.id === selectedSessionId && "bg-purple-50 hover:bg-purple-50"

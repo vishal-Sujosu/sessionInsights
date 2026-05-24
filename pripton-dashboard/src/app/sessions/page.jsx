@@ -1,5 +1,6 @@
 import { getSessions } from "@/services/sessions-service"
 import { SessionTable } from "@/features/sessions/components/session-table"
+import  SessionDetailPanel  from "@/features/session-detail/components/session-detail-panel"
 
 export default async function SessionsPage() {
   const sessions = await getSessions()
@@ -13,6 +14,7 @@ export default async function SessionsPage() {
         </p>
       </div>
       <SessionTable initialData={sessions} />
+      <SessionDetailPanel />
     </div>
   )
 }

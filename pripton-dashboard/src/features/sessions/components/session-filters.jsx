@@ -33,39 +33,49 @@ export function SessionFilters() {
         />
       </div>
 
-      <Select
-        value={filters.status}
-        onValueChange={(value) => setFilters({ status: value })}
-      >
-        <SelectTrigger className="w-[160px]">
-          <SelectValue placeholder="Status" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="all">All Statuses</SelectItem>
-          {Object.entries(SESSION_STATUS_LABELS).map(([key, label]) => (
-            <SelectItem key={key} value={key}>
-              {label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      <div className="relative">
+        <span className="pointer-events-none absolute -top-1.5 left-2 z-10 bg-background px-1 text-[11px] font-medium leading-none text-muted-foreground">
+          Status
+        </span>
+        <Select
+          value={filters.status}
+          onValueChange={(value) => setFilters({ status: value })}
+        >
+          <SelectTrigger aria-label="Status" className="w-[160px]">
+            <SelectValue placeholder="Status" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All Statuses</SelectItem>
+            {Object.entries(SESSION_STATUS_LABELS).map(([key, label]) => (
+              <SelectItem key={key} value={key}>
+                {label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
 
-      <Select
-        value={filters.riskLevel}
-        onValueChange={(value) => setFilters({ riskLevel: value })}
-      >
-        <SelectTrigger className="w-[160px]">
-          <SelectValue placeholder="Risk Level" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="all">All Risk Levels</SelectItem>
-          {Object.entries(RISK_LEVEL_LABELS).map(([key, label]) => (
-            <SelectItem key={key} value={key}>
-              {label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      <div className="relative">
+        <span className="pointer-events-none absolute -top-1.5 left-2 z-10 bg-background px-1 text-[11px] font-medium leading-none text-muted-foreground">
+          Risk Level
+        </span>
+        <Select
+          value={filters.riskLevel}
+          onValueChange={(value) => setFilters({ riskLevel: value })}
+        >
+          <SelectTrigger aria-label="Risk Level" className="w-[160px]">
+            <SelectValue placeholder="Risk Level" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All Risk Levels</SelectItem>
+            {Object.entries(RISK_LEVEL_LABELS).map(([key, label]) => (
+              <SelectItem key={key} value={key}>
+                {label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
 
       {hasActiveFilters && (
         <Button

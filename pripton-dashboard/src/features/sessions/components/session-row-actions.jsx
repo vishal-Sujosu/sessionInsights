@@ -13,7 +13,10 @@ export function SessionRowActions({ session }) {
         variant="ghost"
         size="icon"
         title="Copy ID"
-        onClick={() => navigator.clipboard.writeText(session.id)}
+        onClick={(event) => {
+          event.stopPropagation()
+          navigator.clipboard.writeText(session.id)
+        }}
       >
         <Copy className="h-4 w-4" />
         <span className="sr-only">Copy ID</span>
@@ -22,7 +25,10 @@ export function SessionRowActions({ session }) {
         variant="ghost"
         size="icon"
         title="View details"
-        onClick={() => openDetail(session.id)}
+        onClick={(event) => {
+          event.stopPropagation()
+          openDetail(session)
+        }}
       >
         <Eye className="h-4 w-4" />
         <span className="sr-only">View details</span>
