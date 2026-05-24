@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Sidebar } from "@/features/layout/sidebar";
 import { Header } from "@/features/layout/header";
+import QueryProvider from "@/components/providers/query-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +37,9 @@ export default function RootLayout({ children }) {
             <div className="flex flex-col">
               <Header />
               <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
-                {children}
+                <QueryProvider>
+                  {children}
+                </QueryProvider>
               </main>
             </div>
           </div>
