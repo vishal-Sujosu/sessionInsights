@@ -11,6 +11,7 @@ export const sessionColumns = [
     accessorKey: "candidateName",
     header: "Candidate",
     enableSorting: true,
+    enableHiding: true,
     cell: ({ row }) => (
       <div>
         <div className="font-medium">{row.original.candidateName}</div>
@@ -24,6 +25,7 @@ export const sessionColumns = [
     accessorKey: "id",
     header: "Session ID",
     enableSorting: false,
+    enableHiding: true,
     cell: ({ row }) => (
       <span className="font-mono text-xs text-muted-foreground">
         {row.original.id}
@@ -34,6 +36,7 @@ export const sessionColumns = [
     accessorKey: "sessionStatus",
     header: "Status",
     enableSorting: true,
+    enableHiding: true,
     filterFn: "equals",
     cell: ({ row }) => <SessionStatusBadge status={row.original.sessionStatus} />,
   },
@@ -41,6 +44,7 @@ export const sessionColumns = [
     accessorKey: "integrityScore",
     header: "Risk score",
     enableSorting: true,
+    enableHiding: true,
     sortingFn: "basic",
     cell: ({ row }) => <RiskScoreBar value={row.original.integrityScore} />,
   },
@@ -48,6 +52,7 @@ export const sessionColumns = [
     accessorKey: "durationSeconds",
     header: "Duration",
     enableSorting: true,
+    enableHiding: true,
     cell: ({ row }) => formatDuration(row.original.durationSeconds),
     meta: {
       className: "hidden md:table-cell",
@@ -57,6 +62,7 @@ export const sessionColumns = [
     accessorKey: "currentState",
     header: "Current State",
     enableSorting: true,
+    enableHiding: true,
     cell: ({ row }) => (
       <span className="capitalize text-sm text-gray-600">
         {row.original.currentState.replace("-", " ")}
@@ -67,6 +73,7 @@ export const sessionColumns = [
     accessorKey: "lastActivityAt",
     header: "Last activity",
     enableSorting: true,
+    enableHiding: true,
     cell: ({ row }) => <TimestampCell isoString={row.original.lastActivityAt} />,
   },
   {
@@ -79,6 +86,7 @@ export const sessionColumns = [
     id: "actions",
     header: "",
     enableSorting: false,
+    enableHiding: false,
     cell: ({ row }) => <SessionRowActions session={row.original} />,
   },
 ]

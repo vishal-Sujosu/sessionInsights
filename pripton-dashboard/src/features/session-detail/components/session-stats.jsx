@@ -1,5 +1,6 @@
-// src/features/session-detail/components/session-stats.jsx
 "use client"
+
+// src/features/session-detail/components/session-stats.jsx
 
 import { useMemo } from "react"
 import { Activity, AlertTriangle, RefreshCw, EyeOff } from "lucide-react"

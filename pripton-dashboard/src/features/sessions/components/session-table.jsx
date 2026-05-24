@@ -7,6 +7,7 @@ import { useDashboardStore } from "@/store/dashboard-store"
 import { SessionFilters } from "./session-filters"
 import { DataTable } from "@/components/ui/data-table"
 import { DataTablePagination } from "@/components/ui/data-table-pagination"
+import { DataTableToolbar } from "./table-toolbar"
 
 export function SessionTable({ initialData }) {
   const { data: sessions, isLoading } = useSessions(initialData)
@@ -27,7 +28,11 @@ export function SessionTable({ initialData }) {
 
   return (
     <div className="space-y-4">
+      <div className="flex items-center justify-between gap-2">
       <SessionFilters />
+      <DataTableToolbar table={table} />
+      </div>
+
       <DataTable
         table={table}
         isLoading={isLoading}

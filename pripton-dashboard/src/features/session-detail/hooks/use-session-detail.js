@@ -1,5 +1,6 @@
-// src/features/session-detail/hooks/use-session-detail.js
 "use client"
+
+// src/features/session-detail/hooks/use-session-detail.js
 
 import { useQuery } from "@tanstack/react-query"
 import { getSessionById } from "@/services/sessions-service"

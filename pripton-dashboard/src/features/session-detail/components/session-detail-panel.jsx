@@ -1,5 +1,6 @@
-// src/features/session-detail/components/session-detail-panel.jsx
 "use client"
+
+// src/features/session-detail/components/session-detail-panel.jsx
 
 import { useEffect } from "react"
 import { useDashboardStore } from "@/store/dashboard-store"

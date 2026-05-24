@@ -1,19 +1,28 @@
-export default function Dashboard() {
+import { getSessions } from "@/services/sessions-service"
+import { StatsSummary } from "@/components/ui/stats-summary"
+import { RiskLevelChart } from "@/components/charts/risk-level-chart"
+import { SessionStatusChart } from "@/components/charts/session-status-chart"
+import { IntegrityScoreChart } from "@/components/charts/integrity-score-chart"
+
+export default async function Dashboard() {
+  const sessions = await getSessions()
+
   return (
-    <>
+    <div className="space-y-6">
       <div className="flex items-center">
         <h1 className="text-lg font-semibold md:text-2xl">Dashboard</h1>
       </div>
-      <div className="flex flex-1 items-center justify-center rounded-lg border border-dashed shadow-sm">
-        <div className="flex flex-col items-center gap-1 text-center">
-          <h3 className="text-2xl font-bold tracking-tight">
-            You have no active alerts
-          </h3>
-          <p className="text-sm text-muted-foreground">
-            Everything looks good. No sessions require immediate attention.
-          </p>
-        </div>
+      
+      <StatsSummary sessions={sessions} />
+      
+      <div className="grid gap-6 md:grid-cols-2">
+        <RiskLevelChart sessions={sessions} />
+        <SessionStatusChart sessions={sessions} />
       </div>
-    </>
+      
+      <div className="grid gap-6">
+        <IntegrityScoreChart sessions={sessions} />
+      </div>
+    </div>
   )
 }

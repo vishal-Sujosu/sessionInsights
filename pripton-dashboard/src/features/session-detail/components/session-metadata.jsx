@@ -1,5 +1,6 @@
-// src/features/session-detail/components/session-metadata.jsx
 "use client"
+
+// src/features/session-detail/components/session-metadata.jsx
 
 import { useState, useEffect } from "react"
 import { formatDuration, formatTimestamp, truncate, cn } from "@/lib/utils"
