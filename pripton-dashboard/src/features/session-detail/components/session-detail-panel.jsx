@@ -118,7 +118,7 @@ export default function SessionDetailPanel() {
                     <RiskScoreBar value={session.integrityScore} />
                   </div>
 
-                  <WarningBanner session={session} />
+                  <WarningBanner session={session} events={events} />
 
                   <Separator />
 
@@ -126,7 +126,7 @@ export default function SessionDetailPanel() {
                     Session details
                   </h3>
 
-                  <SessionMetadata session={session} />
+                  <SessionMetadata session={session} events={events} />
 
                   <Separator />
 

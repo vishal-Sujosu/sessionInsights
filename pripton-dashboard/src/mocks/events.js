@@ -48,7 +48,10 @@ export function makeEventsForSession(session) {
 
   const random = createSeededRandom(session.id);
   const events = [];
-  const extraEventCount = Math.floor(random() * 7) + 4;
+  const eventCount = Math.max(
+    session.eventCount || EVENT_TYPES.length,
+    EVENT_TYPES.length
+  );
 
   const typeCounts = {
     tab_switch: 0,
@@ -61,7 +64,7 @@ export function makeEventsForSession(session) {
   const durationMs = Math.max(endMs - startMs, EVENT_TYPES.length * 60 * 1000);
   const totalEvents = [
     ...EVENT_TYPES,
-    ...Array.from({ length: extraEventCount }, () =>
+    ...Array.from({ length: eventCount - EVENT_TYPES.length }, () =>
       EVENT_TYPES[Math.floor(random() * EVENT_TYPES.length)]
     ),
   ];

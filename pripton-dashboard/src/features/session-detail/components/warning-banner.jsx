@@ -3,8 +3,16 @@
 
 import { AlertTriangle } from "lucide-react"
 
-export function WarningBanner({ session }) {
-  if (!session || (session.warningCount <= 2 && session.riskLevel !== "critical")) {
+export function WarningBanner({ session, events = [] }) {
+  const warningCount = events.filter(
+    (event) => event.severity === "warning" || event.severity === "critical"
+  ).length
+  const displayedWarningCount = events.length ? warningCount : session?.warningCount
+
+  if (
+    !session ||
+    (displayedWarningCount <= 2 && session.riskLevel !== "critical")
+  ) {
     return null
   }
 
@@ -18,7 +26,7 @@ export function WarningBanner({ session }) {
             : "Multiple integrity warnings"}
         </p>
         <p className="text-xs text-red-600 mt-0.5">
-          {session.warningCount} warning events recorded during this session.
+          {displayedWarningCount} warning events recorded during this session.
         </p>
       </div>
     </div>

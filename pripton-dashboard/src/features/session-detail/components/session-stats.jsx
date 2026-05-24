@@ -26,7 +26,7 @@ export function SessionStats({ session, events = [] }) {
     })
 
     return {
-      totalEvents: session.eventCount || 0,
+      totalEvents: events.length || session.eventCount || 0,
       warningEvents,
       reconnects,
       focusLosses

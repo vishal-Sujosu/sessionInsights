@@ -83,7 +83,7 @@ export const makeSession = (overrides = {}) => {
   );
   const lastActivityAt = lastActivityAtDate.toISOString();
 
-  const eventCount = Math.floor(Math.random() * (25 - 4 + 1)) + 4;
+  const eventCount = Math.floor(Math.random() * (25 - 6 + 1)) + 6;
   const warningCount = Math.floor(
     Math.random() * (Math.min(eventCount, 8) + 1)
   );

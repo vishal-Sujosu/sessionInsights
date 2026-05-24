@@ -14,7 +14,7 @@ function TimestampDisplay({ isoString }) {
   return <span className="text-sm text-gray-700">{display}</span>
 }
 
-export function SessionMetadata({ session }) {
+export function SessionMetadata({ session, events = [] }) {
   if (!session) return null
 
   const stateDotColors = {
@@ -36,7 +36,7 @@ export function SessionMetadata({ session }) {
     { label: "Duration", value: formatDuration(session.durationSeconds) },
     { label: "Current state", value: currentStateDisplay },
     { label: "Exam", value: truncate(session.examTitle, 36) },
-    { label: "Total events", value: session.eventCount },
+    { label: "Total events", value: events.length || session.eventCount },
     { label: "Candidate", value: session.candidateEmail },
   ]
 

@@ -17,8 +17,8 @@ export function Sidebar() {
   const pathname = usePathname()
 
   return (
-    <div className="hidden border-r bg-muted/20 lg:block lg:w-64">
-      <div className="flex h-full max-h-screen flex-col gap-2">
+    <div className="hidden h-dvh border-r bg-muted/20 lg:block lg:w-64">
+      <div className="flex h-full flex-col gap-2">
         <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
           <Link href="/" className="flex items-center gap-2 font-semibold">
             <ShieldAlert className="h-6 w-6 text-primary" />
