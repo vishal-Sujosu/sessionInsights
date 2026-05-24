@@ -12,7 +12,7 @@ export default function RiskIndicator({ riskLevel }) {
     medium: "bg-yellow-500",
     high: "bg-orange-500",
     critical: "bg-red-500"
-  }[riskLevel] || "bg-gray-500"
+  }[riskLevel] || "bg-gray-500 dark:bg-gray-400"
 
   const textColor = RISK_LEVEL_COLORS[riskLevel] || "text-foreground"
 

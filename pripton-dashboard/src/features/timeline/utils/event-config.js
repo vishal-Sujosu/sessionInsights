@@ -8,5 +8,5 @@ export const EVENT_CONFIG = {
   reconnect:            { icon: RefreshCw,      color: "text-blue-500",    bg: "bg-blue-50",    label: "Reconnect" },
   inactivity_warning:   { icon: Clock,          color: "text-yellow-500",  bg: "bg-yellow-50",  label: "Inactivity warning" },
   session_start:        { icon: Play,           color: "text-green-500",   bg: "bg-green-50",   label: "Session started" },
-  session_end:          { icon: Square,         color: "text-gray-500",    bg: "bg-gray-100",   label: "Session ended" },
+  session_end:          { icon: Square,         color: "text-gray-500 dark:text-gray-300",    bg: "bg-gray-100 dark:bg-gray-800",   label: "Session ended" },
 }

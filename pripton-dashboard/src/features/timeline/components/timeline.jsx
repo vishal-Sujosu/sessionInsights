@@ -5,7 +5,7 @@ import { TimelineItem } from "./timeline-item";
 export function Timeline({ events }) {
   if (!events || events.length === 0) {
     return (
-      <div className="text-center py-8 text-sm text-gray-500 bg-gray-50 rounded-lg border border-dashed border-gray-200">
+      <div className="text-center py-8 text-sm text-muted-foreground bg-muted/10 dark:bg-muted/20 rounded-lg border border-dashed border-border">
         No events recorded for this session.
       </div>
     );

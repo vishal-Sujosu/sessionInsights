@@ -17,7 +17,7 @@ export function DataTable({ table, isLoading, emptyMessage = "No results found."
       <table className="w-full text-sm">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id} className="border-b bg-gray-50/50">
+            <tr key={headerGroup.id} className="border-b bg-muted/10 dark:bg-muted/20">
               {headerGroup.headers.map((header) => {
                 if (header.column.columnDef.meta?.hidden) return null
 

@@ -122,7 +122,7 @@ export default function SessionDetailPanel() {
 
                   <Separator />
 
-                  <h3 className="text-xs uppercase tracking-wide text-gray-400 font-medium">
+                  <h3 className="text-xs uppercase tracking-wide text-muted-foreground font-medium">
                     Session details
                   </h3>
 
@@ -130,7 +130,7 @@ export default function SessionDetailPanel() {
 
                   <Separator />
 
-                  <h3 className="text-xs uppercase tracking-wide text-gray-400 font-medium">
+                  <h3 className="text-xs uppercase tracking-wide text-muted-foreground font-medium">
                     Activity summary
                   </h3>
 
@@ -138,7 +138,7 @@ export default function SessionDetailPanel() {
 
                   <Separator />
 
-                  <h3 className="text-xs uppercase tracking-wide text-gray-400 font-medium">
+                  <h3 className="text-xs uppercase tracking-wide text-muted-foreground font-medium">
                     Event timeline
                   </h3>
                   {eventsLoading ? (

@@ -24,7 +24,7 @@ export function SessionFilters() {
   return (
     <div className="flex flex-wrap gap-3">
       <div className="relative flex-1 min-w-[200px] max-w-sm">
-        <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
+        <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
         <Input
           placeholder="Search candidate or exam..."
           className="pl-9"

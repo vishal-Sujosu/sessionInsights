@@ -9,7 +9,7 @@ export default async function SessionsPage() {
     <div className="p-0 space-y-1">
       <div>
         <h1 className="text-2xl font-semibold">Sessions</h1>
-        <p className="text-sm text-gray-500 mt-1">
+        <p className="text-sm text-muted-foreground mt-1">
           Monitor candidate session activity and integrity scores
         </p>
       </div>

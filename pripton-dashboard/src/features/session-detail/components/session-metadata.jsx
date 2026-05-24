@@ -11,22 +11,22 @@ function TimestampDisplay({ isoString }) {
     setDisplay(formatTimestamp(isoString))
   }, [isoString])
   
-  return <span className="text-sm text-gray-700">{display}</span>
+  return <span className="text-sm text-foreground">{display}</span>
 }
 
 export function SessionMetadata({ session, events = [] }) {
   if (!session) return null
 
   const stateDotColors = {
-    "in-progress": "bg-green-500",
-    "idle": "bg-yellow-500",
-    "disconnected": "bg-red-500",
-    "completed": "bg-gray-500"
+    "in-progress": "bg-green-500 dark:bg-green-400",
+    "idle": "bg-yellow-500 dark:bg-yellow-400",
+    "disconnected": "bg-red-500 dark:bg-red-400",
+    "completed": "bg-gray-500 dark:bg-gray-400"
   }
 
   const currentStateDisplay = (
     <div className="flex items-center gap-1.5">
-      <span className={cn("h-2 w-2 rounded-full", stateDotColors[session.currentState] || "bg-gray-500")} />
+      <span className={cn("h-2 w-2 rounded-full", stateDotColors[session.currentState] || "bg-gray-500 dark:bg-gray-400")} />
       <span>{session.currentState}</span>
     </div>
   )
@@ -44,8 +44,8 @@ export function SessionMetadata({ session, events = [] }) {
     <dl className="grid grid-cols-2 gap-x-4 gap-y-3">
       {fields.map(({ label, value }) => (
         <div key={label}>
-          <dt className="text-xs text-gray-500">{label}</dt>
-          <dd className="text-sm text-gray-900 font-medium mt-0.5">
+          <dt className="text-xs text-muted-foreground">{label}</dt>
+          <dd className="text-sm text-foreground font-medium mt-0.5">
             {value}
           </dd>
         </div>

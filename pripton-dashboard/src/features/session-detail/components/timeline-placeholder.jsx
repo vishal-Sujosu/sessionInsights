@@ -22,7 +22,7 @@ export function TimelinePlaceholder({ events, isLoading }) {
 
   if (!events || events.length === 0) {
     return (
-      <p className="text-sm text-gray-400 text-center py-6">
+      <p className="text-sm text-muted-foreground text-center py-6">
         No events recorded
       </p>
     )
@@ -33,14 +33,14 @@ export function TimelinePlaceholder({ events, isLoading }) {
       {events.map(event => (
         <div
           key={event.id}
-          className="flex items-start gap-2 py-2 border-b border-gray-50 last:border-0"
+          className="flex items-start gap-2 py-2 border-b border-border last:border-0"
         >
-          <span className="text-xs text-gray-400 w-20 flex-shrink-0 pt-0.5 font-mono">
+          <span className="text-xs text-muted-foreground w-20 flex-shrink-0 pt-0.5 font-mono">
             {new Date(event.occurredAt).toLocaleTimeString([], {
               hour: '2-digit', minute: '2-digit', second: '2-digit'
             })}
           </span>
-          <span className="text-xs text-gray-700 flex-1">
+          <span className="text-xs text-foreground flex-1">
             {event.description}
           </span>
         </div>
