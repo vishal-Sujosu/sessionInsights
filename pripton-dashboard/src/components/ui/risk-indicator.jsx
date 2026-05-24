@@ -14,7 +14,7 @@ export default function RiskIndicator({ riskLevel }) {
     critical: "bg-red-500"
   }[riskLevel] || "bg-gray-500"
 
-  const textColor = RISK_LEVEL_COLORS[riskLevel] || "text-gray-900"
+  const textColor = RISK_LEVEL_COLORS[riskLevel] || "text-foreground"
 
   return (
     <div className="flex items-center gap-1.5">

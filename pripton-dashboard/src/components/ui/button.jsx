@@ -1,3 +1,5 @@
+"use client"
+
 import { Button as ButtonPrimitive } from "@base-ui/react/button"
 import { cva } from "class-variance-authority";
 
@@ -44,11 +46,13 @@ function Button({
   className,
   variant = "default",
   size = "default",
+  suppressHydrationWarning = true,
   ...props
 }) {
   return (
     <ButtonPrimitive
       data-slot="button"
+      suppressHydrationWarning={suppressHydrationWarning}
       className={cn(buttonVariants({ variant, size, className }))}
       {...props} />
   );

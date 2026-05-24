@@ -42,18 +42,18 @@ export default function SessionDetailPanel() {
       {isDetailOpen && (
         <>
           <div
-            className="fixed inset-0 bg-black/20 z-40"
+            className="fixed inset-0 bg-black/40 z-40"
             onClick={closeDetail}
             onWheel={(event) => event.preventDefault()}
             onTouchMove={(event) => event.preventDefault()}
           />
           
           <motion.div
-            className="fixed inset-y-0 right-0 z-50 w-full md:w-[680px] bg-white shadow-xl flex flex-col overflow-hidden"
+            className="fixed inset-y-0 right-0 z-50 w-full md:w-[680px] bg-background shadow-xl flex flex-col overflow-hidden"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ type: "tween", duration: 0.25, ease: "easeInOut" }}
+            transition={{ type: "spring", bounce: 0, duration: 0.3 }}
           >
             {sessionLoading && !session ? (
               <div className="flex flex-col h-full">
@@ -84,18 +84,18 @@ export default function SessionDetailPanel() {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={closeDetail}
-                      className="md:hidden p-1 -ml-1 text-gray-500 hover:text-gray-700"
+                      className="md:hidden p-1 -ml-1 text-muted-foreground hover:text-foreground"
                       title="Back"
                     >
                       <ArrowLeft className="h-5 w-5" />
                     </button>
                     <div>
-                      <h2 className="font-semibold text-gray-900">{session.candidateName}</h2>
-                      <div className="flex items-center gap-1.5 text-xs text-gray-500 font-mono mt-0.5">
+                      <h2 className="font-semibold text-foreground">{session.candidateName}</h2>
+                      <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-mono mt-0.5">
                         <span>{session.id}</span>
                         <button
                           onClick={() => navigator.clipboard.writeText(session.id)}
-                          className="hover:text-gray-700 p-0.5"
+                          className="hover:text-foreground p-0.5 cursor-pointer rounded-md"
                           title="Copy session ID"
                         >
                           <Copy className="h-3 w-3" />
@@ -105,7 +105,7 @@ export default function SessionDetailPanel() {
                   </div>
                   <button
                     onClick={closeDetail}
-                    className="p-1 text-gray-500 hover:text-gray-700 rounded-md hover:bg-gray-100"
+                    className="p-1 text-muted-foreground hover:text-foreground rounded-md hover:bg-accent"
                   >
                     <X className="h-5 w-5" />
                   </button>

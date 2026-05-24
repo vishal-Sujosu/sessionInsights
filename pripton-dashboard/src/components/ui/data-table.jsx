@@ -5,6 +5,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { flexRender } from "@tanstack/react-table"
 import { useDashboardStore } from "@/store/dashboard-store"
 import { cn } from "@/lib/utils"
+import { EmptyState } from "./empty-state"
 
 export function DataTable({ table, isLoading, emptyMessage = "No results found." }) {
   const selectedSessionId = useDashboardStore((s) => s.selectedSessionId)
@@ -23,7 +24,10 @@ export function DataTable({ table, isLoading, emptyMessage = "No results found."
                 return (
                   <th
                     key={header.id}
-                    className="h-10 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0"
+                    className={cn(
+                      "h-10 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0",
+                      header.column.columnDef.meta?.className
+                    )}
                   >
                     {header.isPlaceholder ? null : (
                       <div
@@ -63,7 +67,7 @@ export function DataTable({ table, isLoading, emptyMessage = "No results found."
                 {table.getAllColumns().map((column, colIndex) => {
                   if (column.columnDef.meta?.hidden) return null
                   return (
-                    <td key={colIndex} className="p-4 align-middle">
+                    <td key={colIndex} className={cn("p-4 align-middle", column.columnDef.meta?.className)}>
                       <Skeleton className="h-4 w-full" />
                     </td>
                   )
@@ -74,9 +78,9 @@ export function DataTable({ table, isLoading, emptyMessage = "No results found."
             <tr>
               <td
                 colSpan={table.getAllColumns().filter((c) => !c.columnDef.meta?.hidden).length}
-                className="h-24 text-center align-middle"
+                className="h-48 text-center align-middle"
               >
-                {emptyMessage}
+                <EmptyState message={emptyMessage} />
               </td>
             </tr>
           ) : (
@@ -86,7 +90,7 @@ export function DataTable({ table, isLoading, emptyMessage = "No results found."
                 onClick={() => openDetail(row.original)}
                 className={cn(
                   "border-b transition-colors hover:bg-muted/50 cursor-pointer",
-                  row.original.id === selectedSessionId && "bg-purple-50 hover:bg-purple-50"
+                  row.original.id === selectedSessionId && "bg-purple-50 dark:bg-purple-900/20 hover:bg-purple-50 dark:hover:bg-purple-900/30"
                 )}
               >
                 {row.getVisibleCells().map((cell) => {
