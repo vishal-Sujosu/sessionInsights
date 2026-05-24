@@ -332,23 +332,7 @@ Right-side panel showing detailed session information:
 ### Dark Mode
 All pages support dark mode with theme toggle in the header.
 
-## Troubleshooting
 
-### Development Server Issues
-```bash
-# Clear cache and reinstall
-rm -rf node_modules .next
-npm install
-npm run dev
-```
-
-### Build Errors
-```bash
-# Check for TypeScript/ESLint errors
-npm run lint
-
-# Rebuild
-npm run build
 ```
 
 
